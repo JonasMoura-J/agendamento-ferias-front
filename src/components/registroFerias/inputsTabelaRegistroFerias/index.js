@@ -68,7 +68,7 @@ const InputRegistros = ({getFerias}) => {
                     defaultValue="Todas"
                     onChange = {e => setFuncao(e.target.value)}
                 >
-                    {lista.funcoes.map(l => (
+                    {lista.funcoes.map((l, idx) => (
                         <option key={l.id}>{l.nome}</option>
                     ))}
                 </TextField>
@@ -92,7 +92,7 @@ const InputRegistros = ({getFerias}) => {
                     defaultValue={new Date().getMonth()}
                     onChange = {e => setMes(e.target.value)}
                 >
-                    {lista.meses.map(l => (
+                    {lista.meses.map((l, idx) => (
                         <option key={l.id}>{l.mes}</option>
                     ))}
                 </TextField>
@@ -116,7 +116,7 @@ const InputRegistros = ({getFerias}) => {
                     defaultValue={new Date().getFullYear()}
                     onChange = {e => setAno(e.target.value)}
                 >
-                    {lista.anos.map(l => (
+                    {lista.anos.map((l, idx) => (
                         <option key={l.id}>{l.ano}</option>
                     ))}
                 </TextField>

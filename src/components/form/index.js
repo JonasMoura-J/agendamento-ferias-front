@@ -181,6 +181,7 @@ export default function LayoutTextFields() {
             variant="outlined"
             required
             onChange = {e => setDias(e.target.value)}
+            key={1}
           >
             <option>15</option>
             <option>30</option>
