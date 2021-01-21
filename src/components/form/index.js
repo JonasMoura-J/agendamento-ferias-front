@@ -44,19 +44,19 @@ export default function LayoutTextFields() {
       return
     }
 
+    let dataAniversario = dadosColaborador.aniversarioDataContratacao.split("-");
+    console.log("aqui", parseInt(dataAniversario[0]), hoje.getFullYear)
+    let verificacao = dadosColaborador.aniversarioDataContratacao !== dadosColaborador.dataAdmissao;
+    if(verificacao && parseInt(dataAniversario[0]) === hoje.getFullYear()){
+      alert('O Colaborador já usufruiu das férias neste ano', 'error')
+      return
+    }
     var partesDataAdmissao = dadosColaborador.dataAdmissao.split("-");
     var dataAdmissao = new Date(partesDataAdmissao[0], partesDataAdmissao[1] - 1, partesDataAdmissao[2]);
     var diferenca = Math.abs(hoje.getTime() - dataAdmissao.getTime());
     var diferencaEmDias = Math.ceil(diferenca / (1000 * 3600 * 24))+1;
     if(diferencaEmDias<360){
       alert('O Colaborador ainda não possui um ano na empresa', 'error')
-      return
-    }
-
-    let dataAniversario = dadosColaborador.aniversarioDataContratacao.split("-");
-    console.log("aqui", parseInt(dataAniversario[0]), hoje.getFullYear)
-    if(parseInt(dataAniversario[0]) === hoje.getFullYear()){
-      alert('O Colaborador já usufruiu das férias neste ano', 'error')
       return
     }
 

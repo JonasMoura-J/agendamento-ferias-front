@@ -52,7 +52,6 @@ const TabelaFerias = ({registroFerias}) => {
                     registroFerias&&
                     registroFerias.map(ferias => {
                       return (
-                        <>
                           <TableRow hover key={ferias.id}>
                             <TableCell>{ferias.id}</TableCell>
                             <TableCell>{ferias.dataInicio}</TableCell>
@@ -61,7 +60,6 @@ const TabelaFerias = ({registroFerias}) => {
                             <TableCell>{ferias.colaborador.login}</TableCell>
                             <TableCell>{ferias.colaborador.funcao}</TableCell>
                           </TableRow>
-                        </>
                       );
                     })
                   }
